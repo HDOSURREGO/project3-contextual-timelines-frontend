@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "jquery": "^3.4.1",
+=======
+    "bootstrap": "^4.3.1",
+>>>>>>> b543378d2338e142d95efa96c83b9c8c53dbb529
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "reactstrap": "^8.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
