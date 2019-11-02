@@ -20,6 +20,8 @@ export default class LogIn extends React.Component {
                        <small id="emailHelp" className="form-text text-muted"></small>
                    </FormGroup>
                    <Button type="submit" color="secondary">LogIn</Button>
+
+                   <Button type="submit" color="secondary" style={{marginLeft : "10%"}}>Cancel</Button>
                 </Form>
                 </div>
             </div>
