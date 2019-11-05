@@ -1,23 +1,30 @@
 import React from "react";
-// import logo from "./logo.svg";
-// import "./App.css";
-<<<<<<< HEAD
-import LogIn from './components/LogIn';
-=======
-
-import LogIn from './components/LogIn'
->>>>>>> 92ec3b89ea3aa1fd4b41f07171d6bfc75c8508c4
+import { Switch, Route, Link } from "react-router-dom";
+import "../src/components/LogIn.css";
+import LogIn from "./components/LogIn";
 import SignUp from "./components/SignUp";
-import NavBar from './components/NavBar';
+import Timeline from "./components/Timeline";
+import NavBar from "./components/NavBar";
 
-function App() {
-	return (
-		<div className="App">
-			<NavBar/>
-			{/* <LogIn/> */}
-			<SignUp/>
-		</div>
-	);
+class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
+
+	render() {
+		return (
+			<div>
+				<NavBar />
+				<Switch>
+					{/* <Route exact path="/" component={Home} /> */}
+					<Route exact path="/login" component={LogIn} />
+					<Route path="/signup" component={SignUp} />
+					<Route path="/timeline" component={Timeline} />
+				</Switch>
+			</div>
+		);
+	}
 }
 
 export default App;
