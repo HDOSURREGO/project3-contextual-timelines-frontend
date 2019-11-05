@@ -1,28 +1,27 @@
 import React from "react";
-// import logo from "./logo.svg";
-// import "./App.css";
-
-<<<<<<< HEAD
+import { Switch, Route } from "react-router-dom";
 import LogIn from "./components/LogIn";
-=======
-import LogIn from './components/LogIn'
 import SignUp from "./components/SignUp";
->>>>>>> 92ec3b89ea3aa1fd4b41f07171d6bfc75c8508c4
+import Timeline from "./components/Timeline";
 
-// import Timeline from "./components/Timeline";
+class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
 
-function App() {
-	return (
-		<div className="App">
-<<<<<<< HEAD
-			{/* <Timeline /> */}
-			<LogIn />
-=======
-			{/* <LogIn/> */}
-			<SignUp/>
->>>>>>> 92ec3b89ea3aa1fd4b41f07171d6bfc75c8508c4
-		</div>
-	);
+	render() {
+		return (
+			<div>
+				<Switch>
+					{/* <Route exact path="/" component={Home} /> */}
+					<Route exact path="/login" component={LogIn} />
+					<Route path="/signup" component={SignUp} />
+					<Route path="/timeline" component={Timeline} />
+				</Switch>
+			</div>
+		);
+	}
 }
 
 export default App;

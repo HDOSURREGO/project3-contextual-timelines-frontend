@@ -1,6 +1,6 @@
 import React from "react";
-import "./LogIn.css";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import "./LogIn.css";
 
 export default class LogIn extends React.Component {
 	render() {
