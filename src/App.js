@@ -4,12 +4,12 @@ import React from "react";
 
 import LogIn from "./components/LogIn";
 
-import Timeline from "./components/Timeline";
+// import Timeline from "./components/Timeline";
 
 function App() {
 	return (
 		<div className="App">
-			<Timeline />
+			{/* <Timeline /> */}
 			<LogIn />
 		</div>
 	);
