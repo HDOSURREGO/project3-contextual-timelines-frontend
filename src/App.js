@@ -1,14 +1,15 @@
 import React from "react";
 // import logo from "./logo.svg";
 // import "./App.css";
-import LogIn from "./components/LogIn";
+
+import LogIn from './components/LogIn'
+import SignUp from "./components/SignUp";
 
 function App() {
 	return (
 		<div className="App">
-			<Timeline></Timeline>
-			<h1>Hola fuera de Timeline</h1>
-			<LogIn />
+			{/* <LogIn/> */}
+			<SignUp/>
 		</div>
 	);
 }
