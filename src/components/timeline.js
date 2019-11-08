@@ -12,14 +12,7 @@ class Timeline extends Component {
 	render() {
 		return (
 			<div>
-				<nav>
-					<ul className="nav-menu">
-						<li>Home</li>
-						<li>SignUp</li>
-						<li>LogIn</li>
-					</ul>
-				</nav>
-
+				
 				<div className="timeline-container" id="timeline-1">
 					<div className="timeline-header">
 						<h2 className="timeline-header__title">The Beatles</h2>
