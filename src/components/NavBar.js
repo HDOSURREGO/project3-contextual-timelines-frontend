@@ -13,6 +13,7 @@ export default class NavBar extends React.Component {
 		this.service = new AuthService();
 	}
 	logoutUser = event => {
+		console.log("this is the props ---- ", this.props);
 		event.preventDefault();
 		this.service.logout().then(() => {
 			this.setState({ loggedInUser: null });
@@ -38,7 +39,7 @@ export default class NavBar extends React.Component {
 						<Link to={"/"}>{Home}Home </Link>
 
 						{this.props.theUser && (
-							<Link to={"/login"} onClick={() => this.logoutUser()}>
+							<Link to={"/login"} onClick={e => this.logoutUser(e)}>
 								Logout
 							</Link>
 						)}
