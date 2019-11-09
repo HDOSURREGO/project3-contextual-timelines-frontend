@@ -8,6 +8,7 @@ body {
 	background-repeat: no-repeat;
 	/* Resize the background image to cover the entire container */
 	background-size: cover;
+	/* background-position:center; */
 }
 .signUp-form {
 	margin: 0 auto !important;
@@ -38,6 +39,7 @@ h6 {
 	font-weight: 600;
 	line-height: 1.3;
 }
+
 h2 {
 	margin-top: 1.3em;
 }

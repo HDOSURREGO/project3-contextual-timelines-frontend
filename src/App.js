@@ -7,6 +7,7 @@ import SignUp from "./components/SignUp";
 import Timeline from "./components/Timeline";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
+import TimelineForm from './components/TimelineForm';
 
 class App extends React.Component {
 	constructor(props) {
@@ -70,6 +71,7 @@ class App extends React.Component {
 						)}
 					/>
 					<Route exact path="/timeline" component={Timeline} />
+					<Route exact path="/timeline-form" component={TimelineForm} />
 				</Switch>
 			</div>
 		);
