@@ -42,6 +42,7 @@
     font-size: 18px;
     position: absolute;
     right:0px;
+    padding-right:20px;
   }
   
   .nav > .nav-links > a {
