@@ -4,8 +4,22 @@ import { Link } from "react-router-dom";
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import Home from "./Home";
+import AuthService from "./auth-service";
 
 export default class NavBar extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { loggedInUser: null };
+		this.service = new AuthService();
+	}
+	logoutUser = event => {
+		console.log("this is the props ---- ", this.props);
+		event.preventDefault();
+		this.service.logout().then(() => {
+			this.setState({ loggedInUser: null });
+			this.props.getUser(null);
+		});
+	};
 	render() {
 		console.log("the props in nav ************ ", this.props);
 		return (
@@ -24,7 +38,11 @@ export default class NavBar extends React.Component {
 						)}
 						<Link to={"/"}>{Home}Home </Link>
 
-						{this.props.theUser && <Link to={"/login"}>Logout</Link>}
+						{this.props.theUser && (
+							<Link to={"/login"} onClick={e => this.logoutUser(e)}>
+								Logout
+							</Link>
+						)}
 						{!this.props.theUser && (
 							<div className="nav-links">
 								<Link to={"/signup"}>{SignUp}Signup </Link>

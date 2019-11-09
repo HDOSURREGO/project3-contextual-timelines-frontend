@@ -7,7 +7,7 @@ import SignUp from "./components/SignUp";
 import Timeline from "./components/Timeline";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import TimelineForm from './components/TimelineForm';
+import TimelineForm from "./components/TimelineForm";
 
 class App extends React.Component {
 	constructor(props) {
@@ -19,7 +19,7 @@ class App extends React.Component {
 
 	componentDidMount() {
 		axios
-			.get("http://localhost:3000/checkuser", { withCredentials: true })
+			.get("http://localhost:3001/checkuser", { withCredentials: true })
 			.then(responseFromTheBackend => {
 				console.log("User in APP.JS: ", responseFromTheBackend);
 				const { userDoc } = responseFromTheBackend.data;
@@ -44,7 +44,10 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<NavBar theUser={this.state.currentUser} />
+				<NavBar
+					theUser={this.state.currentUser}
+					getUser={user => this.syncCurrentUSer(user)}
+				/>
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route

@@ -33,10 +33,9 @@ export default class Login extends React.Component {
 				{ withCredentials: true }
 			)
 			.then(responseFromServer => {
-				// console.log("response is:", responseFromServer);
+				console.log("response is:", responseFromServer);
 				const { userDoc } = responseFromServer.data;
 				this.props.onUserChange(userDoc);
-				// alert("You are logged in.");
 				this.props.history.push("/");
 			})
 			.catch(err => {
