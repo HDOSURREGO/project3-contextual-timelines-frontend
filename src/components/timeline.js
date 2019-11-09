@@ -12,7 +12,6 @@ class Timeline extends Component {
 	render() {
 		return (
 			<div>
-				
 				<div className="timeline-container" id="timeline-1">
 					<div className="timeline-header">
 						<h2 className="timeline-header__title">The Beatles</h2>

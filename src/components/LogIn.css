@@ -1,5 +1,5 @@
 body {
-	background-image: url("https://www.rollingstone.com/wp-content/uploads/2018/06/rs-196766-3297187.jpg?resize=900,600&w=1200");
+	background-image: "../public/beatles-login.jpg" !important;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
 	color: #545454;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
