@@ -9,7 +9,7 @@ export default class Home extends React.Component {
 				<div class="row">
 					<div className="col-lg-12">
 						<div id="content">
-							<h1>TimeLine</h1>
+							<h1>Contextual Timeline</h1>
 							<div className="text-line">
 								<p>
 									Occaecat do laboris labore veniam occaecat velit aliqua labore
@@ -24,7 +24,7 @@ export default class Home extends React.Component {
 								</p>
 							</div>
 							<hr />
-							<Button variant="secondary">Let's started</Button>
+							<Button variant="secondary">Let's get started</Button>
 						</div>
 					</div>
 				</div>
