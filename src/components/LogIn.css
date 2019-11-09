@@ -10,11 +10,19 @@ body {
 	background-size: cover;
 }
 
+.logIn-form{
+    margin: 0 auto !important;
+    float:none;
+    padding-top:18%;
+    width:280px;
+    color:white;
+}
+    
 :placeholder-shown {
 	color: black;
 }
-/* .transparente {
-    background: rgba(255, 255, 255, 0.5);
+ /* .transparente {
+ background: rgba(255, 255, 255, 0.5);
 } */
 input.transparente {
 	box-shadow: none;

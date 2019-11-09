@@ -82,6 +82,7 @@ export default class Signup extends React.Component {
 									></Input>
 								</FormGroup>
 							</Col>
+							
 							<Col md={6}>
 								<FormGroup className="form-group">
 									<Label>Last Name</Label>
