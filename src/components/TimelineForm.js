@@ -52,6 +52,13 @@ export default class TimelineForm extends React.Component{
       <Button color="secondary">Add Event</Button>
       <Button color="secondary" style={{ marginLeft: "5%" }}>Save the TimeLine</Button>
           
+</Form>
+      </div>    
+            </div>
+        )
+    }
+}
+          
          
        
           
@@ -59,13 +66,3 @@ export default class TimelineForm extends React.Component{
           
          
         
-          
-                </Form>
-      </div>    
-
-
-
-            </div>
-        )
-    }
-}
