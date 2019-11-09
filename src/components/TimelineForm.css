@@ -26,8 +26,6 @@ body{
 /* -------------------------------------------- */
 
 #linksUrl{
-    /* 286 */
-    /* 140 */
     width:216px;
 }
 
@@ -35,8 +33,21 @@ body{
 h2{
     color:white;
 }
+#descriptionText{
+    box-shadow: none;
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5) !important;  
+}
 
-.timeline-events .input-form label{
+input.input-form{
+    box-shadow: none;
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* .timeline-events .input-form label{
   position: absolute;
   top: 0;
   left: 0;
@@ -45,5 +56,4 @@ h2{
   color: #fff;
   pointer-events: none;
   transition: 0.5s;
-}
-
+} */
