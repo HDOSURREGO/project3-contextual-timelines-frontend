@@ -30,7 +30,7 @@ export default class Signup extends React.Component {
 		axios
 			.post(
 				// route we are hitting in the backend
-				"http://localhost:3001/signup",
+				`${process.env.REACT_APP_API_URL}/signup`,
 				// the data from the form (AKA req.body 🚀) that we are sending to this route to do the job
 				this.state,
 				// secure sending
@@ -82,7 +82,7 @@ export default class Signup extends React.Component {
 									></Input>
 								</FormGroup>
 							</Col>
-							
+
 							<Col md={6}>
 								<FormGroup className="form-group">
 									<Label>Last Name</Label>
