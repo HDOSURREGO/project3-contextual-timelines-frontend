@@ -20,7 +20,7 @@ class App extends React.Component {
 		axios
 			.get("http://localhost:3000/checkuser", { withCredentials: true })
 			.then(responseFromTheBackend => {
-				// console.log("User in APP.JS: ", responseFromTheBackend)
+				console.log("User in APP.JS: ", responseFromTheBackend);
 				const { userDoc } = responseFromTheBackend.data;
 				this.syncCurrentUSer(userDoc);
 			})
@@ -33,16 +33,42 @@ class App extends React.Component {
 	}
 
 	syncCurrentUSer(user) {
+		console.log("this is the current user info --------------- ", user);
 		this.setState({ currentUser: user });
+		console.log(
+			"this is the current user in the state }}}}}}}}}}} ",
+			this.state
+		);
 	}
 	render() {
 		return (
 			<div>
-				<NavBar />
+				<NavBar theUser={this.state.currentUser} />
 				<Switch>
 					<Route exact path="/" component={Home} />
-					<Route exact path="/login" component={LogIn} />
-					<Route exact path="/signup" component={SignUp} />
+					<Route
+						exact
+						path="/login"
+						render={props => (
+							<LogIn
+								{...props}
+								currentUser={this.state.currentUser}
+								onUserChange={userDoc => this.syncCurrentUSer(userDoc)}
+							/>
+						)}
+					/>
+
+					<Route
+						exact
+						path="/signup"
+						render={props => (
+							<SignUp
+								{...props}
+								currentUser={this.state.currentUser}
+								onUserChange={userDoc => this.syncCurrentUSer(userDoc)}
+							/>
+						)}
+					/>
 					<Route exact path="/timeline" component={Timeline} />
 				</Switch>
 			</div>

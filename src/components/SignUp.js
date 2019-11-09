@@ -30,7 +30,7 @@ export default class Signup extends React.Component {
 		axios
 			.post(
 				// route we are hitting in the backend
-				"http://localhost:3000/signup",
+				"http://localhost:3001/signup",
 				// the data from the form (AKA req.body 🚀) that we are sending to this route to do the job
 				this.state,
 				// secure sending
@@ -40,6 +40,7 @@ export default class Signup extends React.Component {
 				console.log("response is:", responseFromServer);
 				const { userDoc } = responseFromServer.data;
 				this.props.onUserChange(userDoc);
+				this.props.history.push("/");
 			})
 			.catch(err => console.log("Err in signup: ", err));
 	}
@@ -94,7 +95,10 @@ export default class Signup extends React.Component {
 										placeholder="Last Name"
 									></Input>
 									{/* define small text */}
-									{/* <small id="firstNamelHelp" className="form-text text-muted"></small> */}
+									<small
+										id="firstNamelHelp"
+										className="form-text text-muted"
+									></small>
 								</FormGroup>
 							</Col>
 						</Row>
