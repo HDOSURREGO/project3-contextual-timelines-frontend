@@ -2,13 +2,6 @@ import React, { Component } from "react";
 import "./Timeline.css";
 
 class Timeline extends Component {
-	// constructor() {
-	// 	super();
-	// 	this.state = {
-	// 		name: ""
-	// 	};
-	// }
-
 	render() {
 		return (
 			<div>

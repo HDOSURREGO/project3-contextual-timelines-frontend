@@ -7,24 +7,18 @@ body {
 .timeline-wrapper {
 	display: flex;
 	flex-direction: column;
-	text-align: center;
 }
 
-.timeline-wrapper .timeline-list a {
-	color: white !important;
-	display: list-item;
-}
-
-.timeline-form {
-	width: 40%;
-	color: white;
-	margin: 0 auto !important;
+.timeline-events {
+	/* width: 20%;
+    color:white;
+    margin: 0 auto !important;
 	float: none !important;
-	padding-top: 2%;
+    padding-top: 2%; */
 	/* ------------------------ */
 	/* Box */
-	/* display: flex; */
-	/* flex-direction: column; */
+	/* display: flex;
+	flex-direction: column; */
 	/* position: absolute; */
 	top: 50%;
 	left: 50%;
@@ -52,7 +46,7 @@ h2 {
 	background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
-input .input-form {
+input.input-form {
 	box-shadow: none;
 	outline: none;
 	border: none;
