@@ -8,6 +8,11 @@ body {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
+	margin-top: 80px;
+}
+
+.listTitles {
+	padding-top: 10px;
 }
 
 .timeline-wrapper .timeline-list a {
@@ -18,9 +23,11 @@ body {
 .timeline-form {
 	width: 40%;
 	color: white;
-	margin: 0 auto !important;
+	margin-top: 100px !important;
+	margin-bottom: 100px;
 	float: none !important;
 	padding-top: 2%;
+	padding-bottom: 50px;
 	/* ------------------------ */
 	/* Box */
 	/* display: flex; */

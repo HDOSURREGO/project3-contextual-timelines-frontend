@@ -10,10 +10,10 @@ export default class TimelineForm extends React.Component {
 		this.state = {
 			timelineName: "",
 			timelines: null
-			// eventTitle: "",
-			// eventDate: { type: Date },
-			// eventDescription: "",
-			// eventLinks: []
+			eventTitle: "",
+			eventDate: { type: Date },
+			eventDescription: "",
+			eventLinks: []
 		};
 	}
 

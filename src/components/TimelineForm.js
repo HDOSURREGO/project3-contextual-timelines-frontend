@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormGroup, Label, Input, Col, Row, Button } from "reactstrap";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./TimelineForm.css";
 import axios from "axios";
@@ -52,10 +52,11 @@ export default class Timeline extends React.Component {
 	showTimelines() {
 		return this.state.timelines.map((timeline, i) => {
 			return (
-				<Link to={`/timeline/{timeline._id}`} key={i}>
-					{timeline.timelineName}
-					{timeline._id}
-				</Link>
+				<div className="item-list">
+					<Link to={`/timeline/${timeline._id}`} key={i}>
+						<div className="listTitles">{timeline.timelineName}</div>
+					</Link>
+				</div>
 			);
 		});
 	}
@@ -79,7 +80,10 @@ export default class Timeline extends React.Component {
 		return (
 			<div className="timeline-wrapper">
 				<div className="timeline-form">
-					<Form onSubmit={event => this.handleSubmitTimelineName(event)}>
+					<Form
+						className="event-form"
+						onSubmit={event => this.handleSubmitTimelineName(event)}
+					>
 						{/* timeline Name */}
 						<FormGroup className="timeline-name-wrapper">
 							<Label for="timelineName">TimeLine</Label>
@@ -95,7 +99,7 @@ export default class Timeline extends React.Component {
 							<Button
 								type="submit"
 								color="secondary"
-								style={{ marginLeft: "5%" }}
+								style={{ marginLeft: "5%", marginTop: "20px" }}
 							>
 								Add Timeline
 							</Button>
