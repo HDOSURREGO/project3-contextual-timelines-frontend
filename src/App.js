@@ -8,6 +8,8 @@ import Timeline from "./components/Timeline";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import TimelineForm from "./components/TimelineForm";
+import TimelineCompare from "./components/TimelineCompare";
+import TimelineProfile from "./components/TimelineProfile";
 
 class App extends React.Component {
 	constructor(props) {
@@ -37,7 +39,7 @@ class App extends React.Component {
 		console.log("this is the current user info --------------- ", user);
 		this.setState({ currentUser: user });
 		console.log(
-			"this is the current user in the state }}}}}}}}}}} ",
+			"this is the current user in the App.js state }}}}}}}}}}} ",
 			this.state
 		);
 	}
@@ -75,6 +77,12 @@ class App extends React.Component {
 					/>
 					<Route exact path="/timeline" component={Timeline} />
 					<Route exact path="/timeline-form" component={TimelineForm} />
+					<Route exact path="/timeline/:id" component={TimelineProfile} />
+					<Route
+						exact
+						path="/timeline-comparison"
+						component={TimelineCompare}
+					/>
 				</Switch>
 			</div>
 		);

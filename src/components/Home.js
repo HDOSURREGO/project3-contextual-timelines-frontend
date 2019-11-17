@@ -9,7 +9,7 @@ export default class Home extends React.Component {
 				{/* <div class="row">
 					<div className="col-lg-12"> */}
 				<div id="content">
-					<h1>Contextual Timeline</h1>
+					<h1>Contextual Timelines</h1>
 					<div className="text-line">
 						<p>
 							Occaecat do laboris labore veniam occaecat velit aliqua labore non
