@@ -2,15 +2,16 @@ body {
 	background-image: "../public//home-background.png" !important;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-color: rgba(255, 255, 255, 0.9) !important;
-	font-family: 'Playball', cursive;
+	/* background-color: rgba(255, 255, 255, 0.9) !important; */
+	background-color: gray !important;
 }
-​ .text-line {
+ .text-line {
 	text-align: justify;
 	/* text-justify: inter-word; */
 	text-align: center;
 	font-weight: 600;
 }
+
 #content {
 	text-align: center;
 	padding-top: 10%;
@@ -29,12 +30,18 @@ body {
 		0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
+<<<<<<< HEAD
 h1 {
+=======
+
+h1 {
+
+>>>>>>> d0eb3e37b0d1f13ed6b1923f3021126b84040785
 	font-weight: 700;
 	font-size: 5em;
 	color: white !important;
 }
-​ ​ #content hr {
+ #content hr {
 	width: 35%;
 	border-top: 1px solid #f8f8f8;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);

@@ -7,31 +7,18 @@ body {
 .timeline-wrapper {
 	display: flex;
 	flex-direction: column;
-	text-align: center;
-	margin-top: 80px;
 }
 
-.listTitles {
-	padding-top: 10px;
-}
-
-.timeline-wrapper .timeline-list a {
-	color: white !important;
-	display: list-item;
-}
-
-.timeline-form {
-	width: 40%;
-	color: white;
-	margin-top: 100px !important;
-	margin-bottom: 100px;
+.timeline-events {
+	/* width: 20%;
+    color:white;
+    margin: 0 auto !important;
 	float: none !important;
-	padding-top: 2%;
-	padding-bottom: 50px;
+    padding-top: 2%; */
 	/* ------------------------ */
 	/* Box */
-	/* display: flex; */
-	/* flex-direction: column; */
+	/* display: flex;
+	flex-direction: column; */
 	/* position: absolute; */
 	top: 50%;
 	left: 50%;
@@ -52,20 +39,6 @@ body {
 h2 {
 	color: white;
 }
-
-#descriptionText{
-    box-shadow: none;
-    outline: none;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.5) !important;  
-}
-
-
-input.input-form{
-    box-shadow: none;
-    outline: none;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.5) !important;
 #descriptionText {
 	box-shadow: none;
 	outline: none;
@@ -73,7 +46,7 @@ input.input-form{
 	background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
-input .input-form {
+input.input-form {
 	box-shadow: none;
 	outline: none;
 	border: none;

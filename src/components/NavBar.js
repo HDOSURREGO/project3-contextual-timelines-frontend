@@ -43,6 +43,9 @@ export default class NavBar extends React.Component {
 								Logout
 							</Link>
 						)}
+						{this.props.theUser && (
+							<Link to={"/timeline-form"}>Create Timeline</Link>
+						)}
 						{!this.props.theUser && (
 							<div className="nav-links">
 								<Link to={"/signup"}>{SignUp}Signup </Link>
