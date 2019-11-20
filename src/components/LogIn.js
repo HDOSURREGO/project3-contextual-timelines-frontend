@@ -26,17 +26,16 @@ export default class Login extends React.Component {
 		axios
 			.post(
 				// route we are hitting in the backend
-				"http://localhost:3001/login",
+				`${process.env.REACT_APP_API_URL}/login`,
 				// the data from the form (AKA req.body 🚀) that we are sending to this route to do the job
 				this.state,
 				// secure sending
 				{ withCredentials: true }
 			)
 			.then(responseFromServer => {
-				// console.log("response is:", responseFromServer);
+				console.log("response is:", responseFromServer);
 				const { userDoc } = responseFromServer.data;
 				this.props.onUserChange(userDoc);
-				// alert("You are logged in.");
 				this.props.history.push("/");
 			})
 			.catch(err => {
