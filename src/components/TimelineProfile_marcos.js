@@ -20,13 +20,14 @@ export default class TimelineProfile extends React.Component {
 	genericSync(event) {
 		const { name, value } = event.target;
 		this.setState({ [name]: value });
-		console.log(
-			"Forma Events: State despues de leer el nombre en la forma",
-			this.state
-		);
+		// console.log(
+		// 	"Forma Events: State despues de leer el nombre en la forma",
+		// 	this.state
+		// );
 	}
 
 	handleSubmitEventCreate(event) {
+		// console.log("clicking to create event");
 		event.preventDefault();
 
 		const eventTitle = this.state.eventTitle;
@@ -40,7 +41,6 @@ export default class TimelineProfile extends React.Component {
 				`${process.env.REACT_APP_API_URL}/event/create/${this.props.match.params.id}`,
 				// the data from the form (AKA req.body 🚀) that we are sending to this route to do the job
 				{
-					parentId: this.props.match.params.id,
 					eventTitle,
 					eventDate,
 					eventDescription,
@@ -50,34 +50,32 @@ export default class TimelineProfile extends React.Component {
 				// { withCredentials: true }
 			)
 			.then(responseFromServer => {
-				console.log(
-					"Esto fue lo que volvio del servidor tratando de crear un evento:",
-					responseFromServer
-				);
+				// console.log(
+				// 	"Esto fue lo que volvio del servidor tratando de crear un evento:",
+				// 	responseFromServer
+				// );
 
-				let eventsArray = this.state.events ? this.state.events : [];
-				eventsArray.push(responseFromServer.data);
+				// let eventsArray = this.state.events ? [...this.state.events] : [];
+				// eventsArray.push(responseFromServer.data.events);
+				// console.log("the response --------- ", responseFromServer.data.events);
 
-				this.setState({ events: eventsArray });
-				console.log(
-					`"Estos son los eventos asociados al timeline: ${eventsArray}
-                     y este es el timeline asociado: ${this.state.timelineName}`
-				);
+				this.setState({ events: responseFromServer.data.events }, () => {
+					// console.log(
+					// 	`"Estos son los eventos asociados al timeline: ${eventsArray} y este es el timeline asociado: ${this.state.timelineName}`
+					// );
+				});
 			})
 			.catch(err => console.log("Err in timeline creation: ", err));
 	}
 
 	componentDidMount() {
-		console.log("the props ========dadadadadada ", this.props);
+		// console.log("the props ========dadadadadada ", this.props);
 		axios
 			.get(
 				`${process.env.REACT_APP_API_URL}/timelines/${this.props.match.params.id}`
 			)
 			.then(response => {
-				console.log(
-					"the response isssss >>>>>>>>>>>     >>>>>>>>>>>> ",
-					response.data
-				);
+				// console.log("check this twice ??????????!!!!!!!!!!  ", response.data);
 				this.setState({
 					events: response.data.events,
 					timelineName: response.data.timelineName
@@ -92,17 +90,19 @@ export default class TimelineProfile extends React.Component {
 	showEvents() {
 		if (this.state.events)
 			return this.state.events.map((event, i) => {
+				console.log("the event in the map >>> ... .... ", event);
 				return (
-					<div className="item-list">
-						<Link to={`/event/${event._id}`} key={i}>
+					<div className="item-list" key={event._id}>
+						<Link to={`/event/${event._id}`} theid={event._id}>
 							<div className="listTitles">{event.eventTitle}</div>
 						</Link>
 					</div>
 				);
 			});
 	}
-
 	render() {
+		// console.log("=-=--=-=-=-=-=-=", "rendering again");
+		// console.log(this.state);
 		const {
 			timelineName,
 			eventTitle,

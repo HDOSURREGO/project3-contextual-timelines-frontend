@@ -53,13 +53,41 @@ export default class Timeline extends React.Component {
 		return this.state.timelines.map((timeline, i) => {
 			return (
 				<div className="item-list">
-					<Link to={`/timeline/${timeline._id}`} key={i}>
-						<div className="listTitles">{timeline.timelineName}</div>
-					</Link>
+					<div>
+						<Link to={`/timeline/${timeline._id}`} key={i}>
+							<div className="listTitles">{timeline.timelineName}</div>
+						</Link>
+					</div>
+					<div>
+						<Button
+							type="button"
+							onClick={() => this.deleteTimeline(timeline._id)}
+						>
+							Delete Timeline
+						</Button>
+					</div>
 				</div>
 			);
 		});
 	}
+
+	deleteTimeline = id => {
+		console.log(`Borrando y cantando ${id}`);
+		axios
+			.delete(`${process.env.REACT_APP_API_URL}/timeline/delete/${id}`)
+			.then(response => {
+				console.log("Response from Delete Timeline function: ", response);
+				//this.props.history.push("/timeline-form");
+				//this.forceUpdate();
+				const updatedTimelines = this.state.timelines.filter(
+					tl => tl._id !== id
+				);
+				this.setState({ timelines: updatedTimelines });
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	};
 
 	componentDidMount() {
 		axios
