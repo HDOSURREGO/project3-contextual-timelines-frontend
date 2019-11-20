@@ -7,7 +7,10 @@ import SignUp from "./components/SignUp";
 import Timeline from "./components/Timeline";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import TimelineForm from './components/TimelineForm';
+import TimelineForm from "./components/TimelineForm";
+import TimelineCompare from "./components/TimelineCompare";
+import TimelineProfile from "./components/TimelineProfile";
+import EventProfile from "./components/EventProfile";
 
 class App extends React.Component {
 	constructor(props) {
@@ -19,7 +22,7 @@ class App extends React.Component {
 
 	componentDidMount() {
 		axios
-			.get("http://localhost:3000/checkuser", { withCredentials: true })
+			.get("http://localhost:3001/checkuser", { withCredentials: true })
 			.then(responseFromTheBackend => {
 				console.log("User in APP.JS: ", responseFromTheBackend);
 				const { userDoc } = responseFromTheBackend.data;
@@ -37,14 +40,17 @@ class App extends React.Component {
 		console.log("this is the current user info --------------- ", user);
 		this.setState({ currentUser: user });
 		console.log(
-			"this is the current user in the state }}}}}}}}}}} ",
+			"this is the current user in the App.js state }}}}}}}}}}} ",
 			this.state
 		);
 	}
 	render() {
 		return (
 			<div>
-				<NavBar theUser={this.state.currentUser} />
+				<NavBar
+					theUser={this.state.currentUser}
+					getUser={user => this.syncCurrentUSer(user)}
+				/>
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route
@@ -72,6 +78,17 @@ class App extends React.Component {
 					/>
 					<Route exact path="/timeline" component={Timeline} />
 					<Route exact path="/timeline-form" component={TimelineForm} />
+					<Route exact path="/timeline/:id" component={TimelineProfile} />
+					<Route
+						exact
+						path="/event/:id"
+						render={props => <EventProfile {...props} />}
+					/>
+					<Route
+						exact
+						path="/timeline-comparison"
+						component={TimelineCompare}
+					/>
 				</Switch>
 			</div>
 		);

@@ -2,14 +2,16 @@ body {
 	background-image: "../public//home-background.png" !important;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-color: rgba(255, 255, 255, 0.9) !important;
+	/* background-color: rgba(255, 255, 255, 0.9) !important; */
+	background-color: gray !important;
 }
-​ .text-line {
+ .text-line {
 	text-align: justify;
 	/* text-justify: inter-word; */
 	text-align: center;
 	font-weight: 600;
 }
+
 #content {
 	text-align: center;
 	padding-top: 10%;
@@ -18,15 +20,23 @@ body {
 		0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 
-
-
-​ ​ ​ ​ h1 {
-	font-weight: 700;
-	/* to do the font larger */
-	font-size: 5em;
+#content > .text-line > p {
+	width: 50%;
+	margin-left: 375px;
+	text-align: justify;
 	color: white;
+	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+		0px 18px 23px rgba(0, 0, 0, 0.1);
 }
-​ ​ #content hr {
+
+
+h1 {
+
+	font-weight: 700;
+	font-size: 5em;
+	color: white !important;
+}
+ #content hr {
 	width: 35%;
 	border-top: 1px solid #f8f8f8;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);

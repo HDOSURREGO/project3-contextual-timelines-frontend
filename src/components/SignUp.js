@@ -18,19 +18,18 @@ export default class Signup extends React.Component {
 	}
 
 	genericSync(event) {
-		console.log("what is: ", event.target.value);
+		console.log("what is event: ", event.target.value);
 		const { name, value } = event.target;
 		this.setState({ [name]: value });
 	}
 
 	handleSubmit(event) {
-		console.log("submitting form");
 		event.preventDefault();
 
 		axios
 			.post(
 				// route we are hitting in the backend
-				"http://localhost:3001/signup",
+				`${process.env.REACT_APP_API_URL}/signup`,
 				// the data from the form (AKA req.body 🚀) that we are sending to this route to do the job
 				this.state,
 				// secure sending
@@ -40,7 +39,7 @@ export default class Signup extends React.Component {
 				console.log("response is:", responseFromServer);
 				const { userDoc } = responseFromServer.data;
 				this.props.onUserChange(userDoc);
-				this.props.history.push("/");
+				this.props.history.push("/login");
 			})
 			.catch(err => console.log("Err in signup: ", err));
 	}
@@ -82,7 +81,7 @@ export default class Signup extends React.Component {
 									></Input>
 								</FormGroup>
 							</Col>
-							
+
 							<Col md={6}>
 								<FormGroup className="form-group">
 									<Label>Last Name</Label>
@@ -143,8 +142,6 @@ export default class Signup extends React.Component {
 							Cancel
 						</Button>
 					</Form>
-					{/* if the message is not null (basically if there's a message) then show it in this <div> tag */}
-					{this.state.message && <div> {this.state.message} </div>}
 				</div>
 			</div>
 		);

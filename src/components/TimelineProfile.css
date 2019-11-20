@@ -2,32 +2,39 @@ body {
 	background-image: url("https://images.unsplash.com/photo-1572972520964-3544ed51a6df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1946&q=80");
 	background-size: cover;
 	background-repeat: no-repeat;
+	color: white;
 }
 
-.timeline-wrapper {
+.timeline-event-wrapper h1 {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	justify-content: center;
 	text-align: center;
-	margin-top: 80px;
+	color: white;
+	line-height: 3em;
 }
 
+.event-form {
+	margin-left: 1.6em;
+}
+
+.item-list a {
+	display: list-item;
+	text-align: center;
+	text-decoration: none;
+	color: white !important;
+	list-style: none;
+}
 .listTitles {
 	padding-top: 10px;
-}
-
-.timeline-wrapper .timeline-list a {
-	color: white !important;
-	display: list-item;
 }
 
 .timeline-form {
 	width: 40%;
 	color: white;
-	margin-top: 100px !important;
-	margin-bottom: 100px;
+	margin: 0 auto !important;
 	float: none !important;
 	padding-top: 2%;
-	padding-bottom: 50px;
 	/* ------------------------ */
 	/* Box */
 	/* display: flex; */
@@ -43,34 +50,30 @@ body {
 	border-radius: 0.625rem;
 	color: white;
 }
-/* -------------------------------------------- */
 
+.btn-event {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 200px;
+}
+
+/* -------------------------------------------- */
+h1 {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	line-height: 5em;
+	padding: 0px 20px 0px 20px;
+}
 #linksUrl {
-	width: 216px;
+	width: 500px;
 }
 
 h2 {
 	color: white;
-}
-
-#descriptionText{
-    box-shadow: none;
-    outline: none;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.5) !important;  
-}
-
-
-input.input-form{
-    box-shadow: none;
-    outline: none;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.5) !important;
-#descriptionText {
-	box-shadow: none;
-	outline: none;
-	border: none;
-	background-color: rgba(255, 255, 255, 0.5) !important;
+	text-align: center;
+	margin: 1.5rem;
 }
 
 input .input-form {
@@ -78,6 +81,9 @@ input .input-form {
 	outline: none;
 	border: none;
 	background-color: rgba(255, 255, 255, 0.5) !important;
+}
+label {
+	color: white;
 }
 
 /* .timeline-events .input-form label{
@@ -90,3 +96,9 @@ input .input-form {
   pointer-events: none;
   transition: 0.5s;
 } */
+
+* {
+	margin: 0;
+	padding: 0;
+	/* line-height: 0; */
+}
