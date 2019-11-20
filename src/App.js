@@ -10,6 +10,7 @@ import Home from "./components/Home";
 import TimelineForm from "./components/TimelineForm";
 import TimelineCompare from "./components/TimelineCompare";
 import TimelineProfile from "./components/TimelineProfile";
+import EventProfile from "./components/EventProfile";
 
 class App extends React.Component {
 	constructor(props) {
@@ -78,6 +79,11 @@ class App extends React.Component {
 					<Route exact path="/timeline" component={Timeline} />
 					<Route exact path="/timeline-form" component={TimelineForm} />
 					<Route exact path="/timeline/:id" component={TimelineProfile} />
+					<Route
+						exact
+						path="/event/:id"
+						render={props => <EventProfile {...props} />}
+					/>
 					<Route
 						exact
 						path="/timeline-comparison"

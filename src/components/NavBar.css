@@ -56,7 +56,7 @@ body {
 .nav > .nav-links > a {
 	color: white;
 	text-decoration: none;
-	word-spacing: 20px;
+	word-spacing: 0px;
 	padding-right: 20px;
 }
 
