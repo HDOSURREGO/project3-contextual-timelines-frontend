@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import LogIn from "./LogIn";
 import SignUp from "./SignUp";
 import Home from "./Home";
+import Timeline from "./Timeline";
 import AuthService from "./auth-service";
 
 export default class NavBar extends React.Component {
@@ -33,10 +34,14 @@ export default class NavBar extends React.Component {
 					</div>
 
 					<div className="nav-links">
+						<Link to={"/"}>{Home}Home </Link>
+						<Link to={"/timeline/showTimeline"}>
+							{Timeline} Show Timelines{" "}
+						</Link>
+
 						{this.props.theUser && (
 							<p>Hello {this.props.theUser.firstName} !</p>
 						)}
-						<Link to={"/"}>{Home}Home </Link>
 
 						{this.props.theUser && (
 							<Link to={"/login"} onClick={e => this.logoutUser(e)}>
