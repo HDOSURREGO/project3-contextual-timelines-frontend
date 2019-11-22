@@ -49,7 +49,7 @@ export default class Timeline extends React.Component {
 	render() {
 		console.log("After componentDidMount the state is :", this.state);
 		let timelinesList = this.state.timelines;
-		let optionItems = timelinesList.map(chosenTimeline => (
+  	let optionItems = timelinesList.map(chosenTimeline => (
 			<option value={chosenTimeline._id} key={chosenTimeline._id}>
 				{chosenTimeline.timelineName}
 			</option>
@@ -61,7 +61,7 @@ export default class Timeline extends React.Component {
 		);
 
 		return (
-			<div>
+			
 				<div>
 					<select className="select-button" onChange={this.showTimelineInfo}>
 						{optionItems}

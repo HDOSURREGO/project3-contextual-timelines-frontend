@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
+
+*{
+	box-sizing: border-box;
+}
+/* 
 body {
 	background-image: "../public/peakyblinders.jpg";
-}
+} */
 .nav-menu {
 	height: 70px;
 	display: flex;
@@ -20,12 +26,12 @@ body {
 	list-style-type: none;
 	cursor: pointer;
 }
-.nav-menu ul li:hover {
+/* .nav-menu ul li:hover {
 	color: #fff;
 	font-weight: bold;
-}
+} */
 /* -------------------------------- */
-@import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
+
 .timeline {
 	display: flex;
 	margin: 0 auto;
@@ -47,7 +53,7 @@ body {
 .timeline__content-desc {
 	margin: 0;
 	font-size: 15px;
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 	color: rgba(255, 255, 255, 0.7);
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	font-weight: normal;
@@ -177,6 +183,37 @@ body {
 	margin: 10px 0 0 0;
 	font-weight: normal;
 }
+/* button selector */
+.selectOpt{
+	margin: 0 auto;
+	width:160px;
+	margin-top:50px;
+	
+	
+	
+}
+.selectOpt select{
+	display:block;
+	font-weight:normal;
+	padding:3rem;
+	width:100%;
+	font-size: 16px;
+	background-color:#ddd;
+	font-family:sans-serif;
+	color:#444;
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+	box-sizing: border-box;
+
+}
+
+.selectOpt select:hover{
+	border-color:#888;
+}
+
+
+
+
 ​ .demo-footer {
 	padding: 60px 0;
 	text-align: center;
