@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormGroup, Label, Input, Col, Row, Button } from "reactstrap";
+import { Button } from "reactstrap";
 // import { Link } from "react-router-dom";
 import "./TimelineProfile.css";
 import axios from "axios";
