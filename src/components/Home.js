@@ -23,7 +23,7 @@ export default class Home extends React.Component {
 							adipisicing deserunt amet.
 						</p>
 					</div>
-					<hr />
+					{/* <hr /> */}
 					<Button variant="secondary">Let's get started</Button>
 				</div>
 				{/* </div>

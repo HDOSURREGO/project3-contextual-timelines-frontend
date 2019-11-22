@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+   
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1572972520964-3544ed51a6df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1946&q=80");
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: white;
+}
+
+
+.timeline_container{
+    
+    margin-top:70px;
+     /* width: 90%; */
+     
+    height: 650px; 
+    background: rgba(99, 99, 99, 0.8);
+     
+}
+
+
+/* Changes */
+
+/* button */
+.btn-footer{
+	margin-top:10px;
+	margin-left:10px;
+}
+
+
+/* i deleted the ::before */
+
+.timeline-header__title{
+	margin-top:-50px;
+}
+
+/* linea */
+.timeline:before {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* date */
+.timeline_item:before {
+    content: attr(data-text);
+    letter-spacing: 3px;
+    width: 100%;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    font-family: "Pathway Gothic One", sans-serif;
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+    top: 70%;
+    margin-top: -5px;
+    padding-left: 15px;
+    opacity: 1;
+    right: calc(-100% - 56px);
+    
+}
+
+.timeline_item {
+    padding: 16px 0;
+    opacity: 1;
+    /* filter: blur(2px); */
+    transition: 0.5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+}
+
+/* img */
+.timeline_item img{
+    margin-bottom:10px;
+}

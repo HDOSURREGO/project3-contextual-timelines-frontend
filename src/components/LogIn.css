@@ -1,3 +1,7 @@
+*{
+	box-sizing: border-box;
+}
+
 body {
 	background-image: "../public/beatles-login.jpg" !important;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
@@ -57,18 +61,7 @@ b,
 strong {
 	font-weight: 600;
 }
-/* samp {
-    display: none;
-} */
-/* img {
-    animation: colorize 2s cubic-bezier(0, 0, 0.78, 0.36) 1;
-    background: transparent;
-    border: 10px solid rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    display: block;
-    margin: 1.3em auto;
-    max-width: 95%;
-} */
+
 @keyframes colorize {
 	0% {
 		-webkit-filter: grayscale(100%);

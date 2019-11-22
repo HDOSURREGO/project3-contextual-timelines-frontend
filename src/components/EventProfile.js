@@ -1,7 +1,8 @@
 import React from "react";
 import { Form, FormGroup, Label, Input, Col, Row, Button } from "reactstrap";
 // import { Link } from "react-router-dom";
-import "./TimelineProfile.css";
+// import "./TimelineProfile.css";
+import "./EventProfile.css";
 import axios from "axios";
 
 export default class EventProfile extends React.Component {
@@ -73,30 +74,34 @@ export default class EventProfile extends React.Component {
 			this.props
 		);
 		return (
-			<div className="timeline-event-wrapper">
-				<h1>{this.state.eventTitle}</h1>
-				<div className="timeline-container" id="timeline-1">
+			<div className="timeline-event_wrapper">
+				{/* <h1>{this.state.eventTitle}</h1> */}
+				<div className="timeline_container" id="timeline-1">
 					<div className="timeline-header">
 						<h2 className="timeline-header__title">
 							{this.state.timelineName}
 						</h2>
-						<h3 className="timeline-header__subtitle">ds</h3>
+						{/* <h3 className="timeline-header__subtitle">ds</h3> */}
+						
 					</div>
 					<div className="timeline">
-						<div className="timeline-item" data-text={this.state.eventDate}>
+						<div className="timeline_item" data-text={this.state.eventDate}>
 							<div className="timeline__content">
+							<div className="img_header">
+						<img src="https://source.unsplash.com/200x200/?time" alt="Time"/>
+						</div>
 								<h2 className="timeline__content-title">
 									{this.state.eventTitle}
 								</h2>
 								<p className="timeline__content-desc">
 									{this.state.eventDescription}
-									<p>HELLO</p>
+								
 								</p>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div>
+				<div className="btn-footer">
 					<Button type="button" onClick={this.deleteEvent}>
 						Delete Event
 					</Button>
