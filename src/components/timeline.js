@@ -1,19 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Timeline.css";
 import axios from "axios";
+// import { Link } from "react-router-dom";
 
-export default class Timeline extends Component {
+export default class Timeline extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			timelineSelected: null,
 			timelineName: "",
 			eventTitle: "",
 			eventDate: { type: Date },
 			eventDescription: "",
-			eventLinks: [],
 			timelines: [],
 			events: []
 		};
+		this.showTimelineInfo = this.showTimelineInfo.bind(this);
 	}
 
 	componentDidMount() {
@@ -34,53 +36,78 @@ export default class Timeline extends Component {
 			});
 	}
 
-	showTimelineInfo() {
-		console.log("Show TimelifeInfo corriendo");
-		// 	if (this.state.timelines)
-		// 		return this.state.events.map((event, i) => {
-		// 			return (
-		// 				<div className="item-list">
-		// 					<Link to={`/event/${event._id}`} key={i}>
-		// 						<div className="listTitles">{event.eventTitle}</div>
-		// 					</Link>
-		// 				</div>
-		// 			);
-		// 		});
-		// }
+	showTimelineInfo(event) {
+		console.log("Este es el id del timeline seleccionado:", event.target.value);
+		const selectedTimelines = this.state.timelines.filter(
+			chosenTimeline => chosenTimeline._id === event.target.value
+		);
+
+		this.setState({
+			timelineSelected: selectedTimelines[0]
+		});
+
+		// console.log(
+		// 	"Despues de cambiar el state dentro de showTimelineInfo es:",
+		// 	this.state
+		// );
 	}
 
-	// handleChange(event) {
-	// 	console.log("handleChange corriendo y el id es:", event.target.value);
-
-	// 	this.setState({ value: event.target.value }, () => {
-	// 		this.props.history.push(`/timeline/showTimeline/${this.state.value}`);
-	// 	});
-	// 	// alert("You'll never have me!");
-	// }
-
 	render() {
-		console.log("Now the state is:", this.state);
+		console.log("After componentDidMount the state is :", this.state);
 		let timelinesList = this.state.timelines;
 		let optionItems = timelinesList.map(chosenTimeline => (
-			<option key={chosenTimeline._id} value={chosenTimeline._id}>
+			<option value={chosenTimeline._id} key={chosenTimeline._id}>
 				{chosenTimeline.timelineName}
 			</option>
 		));
+		optionItems.push(
+			<option value="unselected" key="unselected">
+				Select a timeline
+			</option>
+		);
+
 		// {
-		/* // value={this.state.value} onChange={e => this.handleChange(e)}> */
+		/* // value={this.state.value} onChange={e => this.handleChange(e)}> onClick={() => this.showTimelineInfo()} value={chosenTimeline._id}*/
 		// }
 		return (
 			<div>
 				<div>
-					<select onClick={() => this.showTimelineInfo()}>{optionItems}</select>
+					<select className="select-button" onChange={this.showTimelineInfo}>
+						{optionItems}
+					</select>
 				</div>
-				{/* <div className="timeline-container" id="timeline-1">
-					<div className="timeline-header">
-						<h2 className="timeline-header__title">The Beatles</h2>
-						<h3 className="timeline-header__subtitle">THE LEGACY</h3>
-					</div>
-					<div className="timeline">
-						<div className="timeline-item" data-text="YEAR">
+				<div className="timeline-header">
+					<h2 className="timeline-header__title">
+						{this.state.timelineSelected
+							? this.state.timelineSelected.timelineName
+							: ""}
+					</h2>
+				</div>
+				<div className="timeline-container" id="timeline-1">
+					{this.state.timelineSelected
+						? this.state.timelineSelected.events.map(eachEvent => (
+								<div className="timeline-header">
+									<h3 className="timeline-header__subtitle">
+										{eachEvent.eventTitle}
+									</h3>
+									<h2 className="timeline__content-title">
+										{eachEvent.eventDate}
+									</h2>
+									<img
+										alt=""
+										className="timeline__img"
+										src="../public/nina_bonita.jpg"
+									/>
+									<p className="timeline__content-desc">
+										{eachEvent.eventDescription}
+									</p>
+								</div>
+						  ))
+						: ""}
+				</div>
+
+				{/* <div className="timeline">
+						
 							<div className="timeline__content">
 								<img
 									className="timeline__img"
@@ -105,9 +132,10 @@ export default class Timeline extends Component {
 									seen as embodying the era's socio-cultural movements.
 								</p>
 							</div>
-						</div>
+						</div> */}
 
-						<div className="timeline-item" data-text="History of Music">
+				{/* ========================================================================================================= */}
+				{/* <div className="timeline-item" data-text="History of Music">
 							<div className="timeline__content">
 								<img
 									alt=""
@@ -135,7 +163,6 @@ export default class Timeline extends Component {
 								</p>
 							</div>
 						</div>
-
 						<div className="timeline-item" data-text="History of Music">
 							<div className="timeline__content">
 								<img
@@ -163,7 +190,6 @@ export default class Timeline extends Component {
 								</p>
 							</div>
 						</div>
-
 						<div className="timeline-item" data-text="History of Music">
 							<div className="timeline__content">
 								<img
@@ -188,7 +214,6 @@ export default class Timeline extends Component {
 								</p>
 							</div>
 						</div>
-
 						<div className="timeline-item" data-text="History of music">
 							<div className="timeline__content">
 								<img
@@ -322,7 +347,6 @@ export default class Timeline extends Component {
 								</p>
 							</div>
 						</div>
-
 						<div className="timeline-item" data-text="History of music">
 							<div className="timeline__content">
 								<img
@@ -363,9 +387,7 @@ export default class Timeline extends Component {
 									never recorded together again.[281].
 								</p>
 							</div>
-						</div>
-					</div>
-				</div> */}
+						</div> */}
 			</div>
 		);
 	}
