@@ -168,7 +168,10 @@ body {
 	margin-bottom: 80px;
 	position: relative;
 }
-.timeline-header__title {
+.timeline-header__title h2 {
+	display: flex;
+	flex-direction: column;
+	margin-top: 100px;
 	color: #fff;
 	font-size: 46px;
 	font-family: Cardo;
