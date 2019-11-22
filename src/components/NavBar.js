@@ -30,6 +30,11 @@ export default class NavBar extends React.Component {
 					<div className="nav-header">
 						<div className="nav-title">
 							<div className="nav-brand">Contextual TimeLines</div>
+							<div>
+								{this.props.theUser && (
+									<p>Hello {this.props.theUser.firstName} !</p>
+								)}
+							</div>
 						</div>
 					</div>
 
@@ -38,10 +43,6 @@ export default class NavBar extends React.Component {
 						<Link to={"/timeline/showTimeline"}>
 							{Timeline} Show Timelines{" "}
 						</Link>
-
-						{this.props.theUser && (
-							<p>Hello {this.props.theUser.firstName} !</p>
-						)}
 
 						{this.props.theUser && (
 							<Link to={"/login"} onClick={e => this.logoutUser(e)}>
