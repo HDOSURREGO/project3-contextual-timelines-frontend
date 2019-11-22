@@ -223,3 +223,9 @@ body {
 	display: inline-block;
 	font-family: Cardo;
 }
+
+.select-button {
+	display: inline;
+	align-items: center;
+	margin-top: 100px;
+}

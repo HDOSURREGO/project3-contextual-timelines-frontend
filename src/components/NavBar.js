@@ -37,23 +37,21 @@ export default class NavBar extends React.Component {
 							</div>
 						</div>
 					</div>
-
-					<div className="nav-links">
-						<Link to={"/"}>{Home}Home </Link>
-						<Link to={"/timeline/showTimeline"}>
-							{Timeline} Show Timelines{" "}
-						</Link>
-
+					<div>
 						{this.props.theUser && (
-							<Link to={"/login"} onClick={e => this.logoutUser(e)}>
-								Logout
-							</Link>
-						)}
-						{this.props.theUser && (
-							<Link to={"/timeline-form"}>Create Timeline</Link>
+							<div className="nav-title">
+								<Link to={"/"}>{Home}Home </Link>
+								<Link to={"/timeline/showTimeline"}>
+									{Timeline} Show Timelines
+								</Link>
+								<Link to={"/login"} onClick={e => this.logoutUser(e)}>
+									Logout
+								</Link>
+								<Link to={"/timeline-form"}>Create Timeline</Link>
+							</div>
 						)}
 						{!this.props.theUser && (
-							<div className="nav-links">
+							<div className="nav-title">
 								<Link to={"/signup"}>{SignUp}Signup </Link>
 								<Link to={"/login"}>{LogIn}Login</Link>
 							</div>
