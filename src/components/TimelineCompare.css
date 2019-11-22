@@ -1,3 +1,7 @@
+*{
+	box-sizing: border-box;
+}
+
 .timeline_header{
     width:100%;
     text-align:center;

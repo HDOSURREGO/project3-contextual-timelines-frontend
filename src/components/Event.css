@@ -1,3 +1,8 @@
+*{
+	box-sizing: border-box;
+}
+
+
 body {
 	background-image: url("https://images.unsplash.com/photo-1572972520964-3544ed51a6df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1946&q=80");
 	background-size: cover;
@@ -10,22 +15,12 @@ body {
 }
 
 .timeline-events {
-	/* width: 20%;
-    color:white;
-    margin: 0 auto !important;
-	float: none !important;
-    padding-top: 2%; */
-	/* ------------------------ */
-	/* Box */
-	/* display: flex;
-	flex-direction: column; */
-	/* position: absolute; */
+	
 	top: 50%;
 	left: 50%;
-	/* transform: translate(-50%, -50%); */
 	width: 25rem;
 	padding: 2.5rem;
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 	background: rgba(0, 0, 0, 0.6);
 	border-radius: 0.625rem;
 	color: white;
@@ -53,13 +48,3 @@ input.input-form {
 	background-color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* .timeline-events .input-form label{
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.625rem 0;
-  font-size: 1rem;
-  color: #fff;
-  pointer-events: none;
-  transition: 0.5s;
-} */

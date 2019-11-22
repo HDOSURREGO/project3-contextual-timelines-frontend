@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
+
+*{
+	box-sizing: border-box;
+}
+/* 
 body {
 	background-image: "../public/peakyblinders.jpg";
-}
+} */
 .nav-menu {
 	height: 70px;
 	display: flex;
@@ -25,7 +31,7 @@ body {
 	font-weight: bold;
 }
 /* -------------------------------- */
-@import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
+
 .timeline {
 	display: flex;
 	margin: 0 auto;
@@ -47,7 +53,7 @@ body {
 .timeline__content-desc {
 	margin: 0;
 	font-size: 15px;
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 	color: rgba(255, 255, 255, 0.7);
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	font-weight: normal;
