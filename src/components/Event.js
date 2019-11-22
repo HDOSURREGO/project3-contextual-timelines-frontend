@@ -9,7 +9,7 @@ export default class TimelineForm extends React.Component {
 		super(props);
 		this.state = {
 			timelineName: "",
-			timelines: null
+			timelines: null,
 			eventTitle: "",
 			eventDate: { type: Date },
 			eventDescription: "",
