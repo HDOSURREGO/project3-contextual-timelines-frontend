@@ -26,10 +26,10 @@ body {
 	list-style-type: none;
 	cursor: pointer;
 }
-.nav-menu ul li:hover {
+/* .nav-menu ul li:hover {
 	color: #fff;
 	font-weight: bold;
-}
+} */
 /* -------------------------------- */
 
 .timeline {
@@ -183,6 +183,37 @@ body {
 	margin: 10px 0 0 0;
 	font-weight: normal;
 }
+/* button selector */
+.selectOpt{
+	margin: 0 auto;
+	width:160px;
+	margin-top:50px;
+	
+	
+	
+}
+.selectOpt select{
+	display:block;
+	font-weight:normal;
+	padding:3rem;
+	width:100%;
+	font-size: 16px;
+	background-color:#ddd;
+	font-family:sans-serif;
+	color:#444;
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+	box-sizing: border-box;
+
+}
+
+.selectOpt select:hover{
+	border-color:#888;
+}
+
+
+
+
 ​ .demo-footer {
 	padding: 60px 0;
 	text-align: center;
