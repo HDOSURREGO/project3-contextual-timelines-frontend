@@ -76,7 +76,7 @@ class App extends React.Component {
 							/>
 						)}
 					/>
-					<Route exact path="/timeline" component={Timeline} />
+					<Route exact path="/timeline/showTimeline" component={Timeline} />
 					<Route exact path="/timeline-form" component={TimelineForm} />
 					<Route exact path="/timeline/:id" component={TimelineProfile} />
 					<Route

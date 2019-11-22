@@ -38,7 +38,7 @@ export default class EventProfile extends React.Component {
 					eventTitle: response.data.eventTitle,
 					eventDate: response.data.eventDate,
 					eventDescription: response.data.eventDescription,
-					eventLinks: response.data.eventDescription,
+					eventLinks: response.data.eventLinks,
 					parentId: response.data.parentId
 				});
 			})
@@ -95,7 +95,9 @@ export default class EventProfile extends React.Component {
 								</h2>
 								<p className="timeline__content-desc">
 									{this.state.eventDescription}
-								
+								</p>
+								<p className="timeline__content-desc">
+									{this.state.eventLinks}
 								</p>
 							</div>
 						</div>
