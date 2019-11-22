@@ -181,7 +181,7 @@ export default class TimelineProfile extends React.Component {
 									<Col md={6}>
 										<FormGroup>
 											<Button color="primary" style={{ marginLeft: "65%" }}>
-												Upload Pic
+												Upload Picture
 											</Button>
 										</FormGroup>
 									</Col>
