@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One");
 
-*{
+* {
 	box-sizing: border-box;
 }
 /* 
@@ -184,35 +184,28 @@ body {
 	font-weight: normal;
 }
 /* button selector */
-.selectOpt{
+.selectOpt {
 	margin: 0 auto;
-	width:160px;
-	margin-top:50px;
-	
-	
-	
+	width: 160px;
+	margin-top: 50px;
 }
-.selectOpt select{
-	display:block;
-	font-weight:normal;
-	padding:3rem;
-	width:100%;
+.selectOpt select {
+	display: block;
+	font-weight: normal;
+	padding: 3rem;
+	width: 100%;
 	font-size: 16px;
-	background-color:#ddd;
-	font-family:sans-serif;
-	color:#444;
-	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-    border-radius: .5em;
+	background-color: #ddd;
+	font-family: sans-serif;
+	color: #444;
+	box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+	border-radius: 0.5em;
 	box-sizing: border-box;
-
 }
 
-.selectOpt select:hover{
-	border-color:#888;
+.selectOpt select:hover {
+	border-color: #888;
 }
-
-
-
 
 ​ .demo-footer {
 	padding: 60px 0;
@@ -225,7 +218,6 @@ body {
 }
 
 .select-button {
-	display: inline;
 	align-items: center;
 	margin-top: 100px;
 }

@@ -41,11 +41,11 @@ export default class NavBar extends React.Component {
 						{this.props.theUser && (
 							<div className="nav-title">
 								<Link to={"/"}>{Home}Home </Link>
-								<Link to={"/timeline/showTimeline"}>
-									{Timeline} Show Timelines
-								</Link>
 								<Link to={"/login"} onClick={e => this.logoutUser(e)}>
 									Logout
+								</Link>
+								<Link to={"/timeline/showTimeline"}>
+									{Timeline} Show Timelines
 								</Link>
 								<Link to={"/timeline-form"}>Create Timeline</Link>
 							</div>
