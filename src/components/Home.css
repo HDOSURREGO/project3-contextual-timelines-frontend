@@ -3,7 +3,7 @@
 }
 
 body {
-	background-image: "../public//home-background.png" !important;
+	/* background-image: "../public//home-background.png" !important; */
 	background-repeat: no-repeat;
 	background-size: cover;
 	/* background-color: rgba(255, 255, 255, 0.9) !important; */
