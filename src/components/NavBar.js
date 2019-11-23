@@ -28,33 +28,51 @@ export default class NavBar extends React.Component {
 				<div className="nav">
 					{/* <input type="checkbox" id="nav-check"/> */}
 					<div className="nav-header">
-						<ul className='test'>
-							<li><p>Contextual TimeLines</p></li>
-							
-								{this.props.theUser && (
-								<li>	<p>Hello {this.props.theUser.firstName} !</p></li>
-								)}
-							
-							</ul>
+						<ul className="test">
+							<li>
+								<p>Contextual TimeLines</p>
+							</li>
+
+							{this.props.theUser && (
+								<li>
+									{" "}
+									<p>Hello {this.props.theUser.firstName} !</p>
+								</li>
+							)}
+						</ul>
 					</div>
 					<div className="nav-title">
 						{this.props.theUser && (
 							<div className="nav-title">
-								<Link to={"/"} className='link'>{Home}Home </Link>
-								<Link to={"/login"}  onClick={e => this.logoutUser(e)} className='link'>
+								<Link to={"/"} className="link">
+									{Home}Home{" "}
+								</Link>
+								<Link
+									to={"/login"}
+									onClick={e => this.logoutUser(e)}
+									className="link"
+								>
 									Logout
 								</Link>
-								<Link to={"/timeline-form"}  className='link'>Create Timeline</Link>
-								<Link to={"/timeline/showTimeline"}  className='link'>
+								<Link to={"/timeline-form"} className="link">
+									Create Timeline
+								</Link>
+								<Link to={"/timeline/showTimeline"} className="link">
 									{Timeline} Show Timelines
 								</Link>
-								<Link to={"/timelineCompare"}  className='link'>Compare Timeline</Link>
+								<Link to={"/timeline-comparison"} className="link">
+									Compare Timeline
+								</Link>
 							</div>
 						)}
 						{!this.props.theUser && (
 							<div className="nav-title">
-								<Link to={"/signup"}  className='link'>{SignUp}Signup </Link>
-								<Link to={"/login"}  className='link'>{LogIn}Login</Link>
+								<Link to={"/signup"} className="link">
+									{SignUp}Signup{" "}
+								</Link>
+								<Link to={"/login"} className="link">
+									{LogIn}Login
+								</Link>
 							</div>
 						)}
 					</div>
