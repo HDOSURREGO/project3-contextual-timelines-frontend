@@ -86,7 +86,7 @@ export default class Timeline extends React.Component {
 									<img
 										alt=""
 										className="timeline__img"
-										src="../public/nina_bonita.jpg"
+										src={eachEvent.eventLinks}
 									/>
 									<p className="timeline__content-desc">
 										{eachEvent.eventDescription}

@@ -82,22 +82,22 @@ export default class EventProfile extends React.Component {
 							{this.state.timelineName}
 						</h2>
 						{/* <h3 className="timeline-header__subtitle">ds</h3> */}
-						
 					</div>
 					<div className="timeline">
 						<div className="timeline_item" data-text={this.state.eventDate}>
 							<div className="timeline__content">
-							<div className="img_header">
-						<img src="https://source.unsplash.com/200x200/?time" alt="Time"/>
-						</div>
+								<div className="img_header">
+									<img
+										alt=""
+										className="timeline__img"
+										src={this.state.eventLinks}
+									/>
+								</div>
 								<h2 className="timeline__content-title">
 									{this.state.eventTitle}
 								</h2>
 								<p className="timeline__content-desc">
 									{this.state.eventDescription}
-								</p>
-								<p className="timeline__content-desc">
-									{this.state.eventLinks}
 								</p>
 							</div>
 						</div>
