@@ -127,7 +127,7 @@ export default class Timeline extends React.Component {
 							<Button
 								type="submit"
 								color="secondary"
-								style={{ marginLeft: "5%", marginTop: "20px" }}
+								style={{ marginLeft: "5%", marginTop: "20px",  marginRight:'31px'}}
 							>
 								Add Timeline
 							</Button>

@@ -91,36 +91,7 @@ label {
 	color: white;
 }
 
-/* .timeline-events .input-form label{
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.625rem 0;
-  font-size: 1rem;
-  color: #fff;
-  pointer-events: none;
-  transition: 0.5s;
-} */
 
-/* Changes
-.btn-footer{
-	margin-top:10px;
-	margin-left:10px;
-}
-
-
-/* i deleted the ::before */
-/* .timeline-container{ */
-    /* position: absolute; */
-    /* left: 0; */
-    /* top: 0; */
-   /* margin-left:20px; */
-   /* margin-right:20px;
-    width: 100%;
-    height: 100%;
-    background: rgba(99, 99, 99, 0.3); */
-    /* content: ""; */
-/* } */ */
 
 .timeline-header__title{
 	margin-top:-50px;

@@ -123,7 +123,7 @@ export default class TimelineForm extends React.Component {
 
 							<Col md={6}>
 								<FormGroup>
-									<Button color="primary" style={{ marginLeft: "37%" }}>
+									<Button color="secondary" style={{ marginLeft: "37%" }}>
 										Add Links
 									</Button>
 								</FormGroup>
