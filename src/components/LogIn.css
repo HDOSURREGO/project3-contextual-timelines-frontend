@@ -3,7 +3,7 @@
 }
 
 body {
-	background-image: "../public/beatles-login.jpg" !important;
+	/* background-image: "../public/beatles-login.jpg" !important; */
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
 	color: #545454;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
