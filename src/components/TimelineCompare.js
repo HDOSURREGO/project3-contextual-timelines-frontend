@@ -1,50 +1,106 @@
 import React from "react";
-import { Row, Col } from "reactstrap";
-import "./TimelineCompare.css";
+import "./Timeline.css";
+import axios from "axios";
+import { Col, Row } from "reactstrap";
 
-export default class TimelineCompare extends React.Component {
+export default class Timeline extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			timelineSelected: null,
+			timelineName: "",
+			eventTitle: "",
+			eventDate: { type: Date },
+			eventDescription: "",
+			timelines: [],
+			events: []
+		};
+		this.showTimelineInfo = this.showTimelineInfo.bind(this);
+	}
+
+	componentDidMount() {
+		axios
+			.get(`${process.env.REACT_APP_API_URL}/timelines`)
+			.then(response => {
+				console.log(
+					"the response getting the Timelines for the showInfo: ",
+					response.data
+				);
+				this.setState({
+					timelines: response.data
+				});
+			})
+			.catch(err => {
+				console.log("error getting timelines ", err);
+				alert("Unable to get timelines");
+			});
+	}
+
+	showTimelineInfo(event) {
+		console.log("Este es el id del timeline seleccionado:", event.target.value);
+		const selectedTimelines = this.state.timelines.filter(
+			chosenTimeline => chosenTimeline._id === event.target.value
+		);
+
+		this.setState({
+			timelineSelected: selectedTimelines[0]
+		});
+	}
+
 	render() {
+		console.log("After componentDidMount the state is :", this.state);
+		let timelinesList = this.state.timelines;
+		let optionItems = timelinesList.map(chosenTimeline => (
+			<option value={chosenTimeline._id} key={chosenTimeline._id}>
+				{chosenTimeline.timelineName}
+			</option>
+		));
+		optionItems.unshift(
+			<option value="unselected" key="unselected">
+				Select a timeline
+			</option>
+		);
+
 		return (
 			<div>
 				<Row form className="firstTimeline">
 					{/* First Col */}
 					<Col md={4}>
+						<div className="timeline-header">
+							<select
+								className="select-button"
+								onChange={this.showTimelineInfo}
+							>
+								{optionItems}
+							</select>
+
+							<h2 className="timeline-header__title">
+								{this.state.timelineSelected
+									? this.state.timelineSelected.timelineName
+									: ""}
+							</h2>
+						</div>
 						<div className="timeline-container" id="timeline-1">
-							<div className="timeline_header">
-								<h2 className="timeline-header-title">The Beatles</h2>
-								<h3 className="timeline-header-subtitle">THE LEGACY</h3>
-							</div>
-							{/* change the class name = timeline for timeline-data */}
-							<div className="timeline-data">
-								{/* todo el container */}
-								<div className="timeline-item">
-									<div className="timeline__content">
-										<img
-											className="timeline__img"
-											src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/09/The-Beatles-pixlr-920x584.jpg"
-											alt="imagenes"
-										/>
-										<h2 className="timeline__content-title">1960</h2>
-										<p className="timeline__content">
-											The Beatles were an English rock band formed in Liverpool
-											in 1960. With a line-up comprising John Lennon, Paul
-											McCartney, George Harrison and Ringo Starr, they are
-											regarded as the most influential band of all time.[1] The
-											group were integral to the evolution of pop music into an
-											art form and to the development of the counterculture of
-											the 1960s.[2] Their sound, rooted in skiffle, beat and
-											1950s rock and roll, incorporated elements of
-											classNameical music and traditional pop in innovative
-											ways. They also pioneered recording techniques and
-											explored music styles ranging from ballads and Indian
-											music to psychedelia and hard rock. As they continued to
-											draw influences from a variety of cultural sources, their
-											musical and lyrical sophistication grew, and they came to
-											be seen as embodying the era's socio-cultural movements.
-										</p>
-									</div>
-								</div>
-							</div>
+							{this.state.timelineSelected
+								? this.state.timelineSelected.events.map(eachEvent => (
+										<div className="timeline-header">
+											<h3 className="timeline-header__subtitle">
+												{eachEvent.eventTitle}
+											</h3>
+											<h2 className="timeline__content-title">
+												{eachEvent.eventDate}
+											</h2>
+											<img
+												alt=""
+												className="timeline__img"
+												src={eachEvent.eventLinks}
+											/>
+											<p className="timeline__content-desc">
+												{eachEvent.eventDescription}
+											</p>
+										</div>
+								  ))
+								: ""}
 						</div>
 
 						{/*first col  */}
@@ -52,41 +108,41 @@ export default class TimelineCompare extends React.Component {
 
 					{/* Second Col */}
 					<Col md={4}>
-						<div className="timeline-container" id="timeline-2">
-							<div className="timeline-header">
-								<h2 className="timeline-header__title">The Beatles</h2>
-								<h3 className="timeline-header__subtitle">THE LEGACY</h3>
-							</div>
-							{/* change the class name = timeline for timeline-data */}
-							<div className="timeline-data">
-								<div className="timeline-item">
-									<div className="timeline__content">
-										<img
-											className="timeline__img"
-											src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/09/The-Beatles-pixlr-920x584.jpg"
-											alt="imagenes"
-										/>
-										<h2 className="timeline__content-title">1960</h2>
-										<p className="timeline__content-desc">
-											The Beatles were an English rock band formed in Liverpool
-											in 1960. With a line-up comprising John Lennon, Paul
-											McCartney, George Harrison and Ringo Starr, they are
-											regarded as the most influential band of all time.[1] The
-											group were integral to the evolution of pop music into an
-											art form and to the development of the counterculture of
-											the 1960s.[2] Their sound, rooted in skiffle, beat and
-											1950s rock and roll, incorporated elements of
-											classNameical music and traditional pop in innovative
-											ways. They also pioneered recording techniques and
-											explored music styles ranging from ballads and Indian
-											music to psychedelia and hard rock. As they continued to
-											draw influences from a variety of cultural sources, their
-											musical and lyrical sophistication grew, and they came to
-											be seen as embodying the era's socio-cultural movements.
-										</p>
-									</div>
-								</div>
-							</div>
+						<div className="timeline-header">
+							<select
+								className="select-button"
+								onChange={this.showTimelineInfo}
+							>
+								{optionItems}
+							</select>
+
+							<h2 className="timeline-header__title">
+								{this.state.timelineSelected
+									? this.state.timelineSelected.timelineName
+									: ""}
+							</h2>
+						</div>
+						<div className="timeline-container" id="timeline-1">
+							{this.state.timelineSelected
+								? this.state.timelineSelected.events.map(eachEvent => (
+										<div className="timeline-header">
+											<h3 className="timeline-header__subtitle">
+												{eachEvent.eventTitle}
+											</h3>
+											<h2 className="timeline__content-title">
+												{eachEvent.eventDate}
+											</h2>
+											<img
+												alt=""
+												className="timeline__img"
+												src={eachEvent.eventLinks}
+											/>
+											<p className="timeline__content-desc">
+												{eachEvent.eventDescription}
+											</p>
+										</div>
+								  ))
+								: ""}
 						</div>
 
 						{/* second col */}
@@ -94,43 +150,42 @@ export default class TimelineCompare extends React.Component {
 
 					{/* Third Col */}
 					<Col md={4}>
-						<div className="timeline-container" id="timeline-3">
-							<div className="timeline-header">
-								<h2 className="timeline-header__title">The Beatles</h2>
-								<h3 className="timeline-header__subtitle">THE LEGACY</h3>
-							</div>
-							{/* Change the the class name = timeline for timeline-data */}
-							<div className="timeline-data">
-								<div className="timeline-item">
-									<div className="timeline__content">
-										<img
-											className="timeline__img"
-											src="https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/09/The-Beatles-pixlr-920x584.jpg"
-											alt="imagenes"
-										/>
-										<h2 className="timeline__content-title">1960</h2>
-										<p className="timeline__content-desc">
-											The Beatles were an English rock band formed in Liverpool
-											in 1960. With a line-up comprising John Lennon, Paul
-											McCartney, George Harrison and Ringo Starr, they are
-											regarded as the most influential band of all time.[1] The
-											group were integral to the evolution of pop music into an
-											art form and to the development of the counterculture of
-											the 1960s.[2] Their sound, rooted in skiffle, beat and
-											1950s rock and roll, incorporated elements of
-											classNameical music and traditional pop in innovative
-											ways. They also pioneered recording techniques and
-											explored music styles ranging from ballads and Indian
-											music to psychedelia and hard rock. As they continued to
-											draw influences from a variety of cultural sources, their
-											musical and lyrical sophistication grew, and they came to
-											be seen as embodying the era's socio-cultural movements.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
+						<div className="timeline-header">
+							<select
+								className="select-button"
+								onChange={this.showTimelineInfo}
+							>
+								{optionItems}
+							</select>
 
+							<h2 className="timeline-header__title">
+								{this.state.timelineSelected
+									? this.state.timelineSelected.timelineName
+									: ""}
+							</h2>
+						</div>
+						<div className="timeline-container" id="timeline-1">
+							{this.state.timelineSelected
+								? this.state.timelineSelected.events.map(eachEvent => (
+										<div className="timeline-header">
+											<h3 className="timeline-header__subtitle">
+												{eachEvent.eventTitle}
+											</h3>
+											<h2 className="timeline__content-title">
+												{eachEvent.eventDate}
+											</h2>
+											<img
+												alt=""
+												className="timeline__img"
+												src={eachEvent.eventLinks}
+											/>
+											<p className="timeline__content-desc">
+												{eachEvent.eventDescription}
+											</p>
+										</div>
+								  ))
+								: ""}
+						</div>
 						{/* third Col */}
 					</Col>
 				</Row>
