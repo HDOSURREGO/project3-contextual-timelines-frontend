@@ -1,22 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
 *{
 	box-sizing: border-box;
 }
 
 body {
-	background-image: "../public//home-background.png" !important;
+	/* background-image: "../public//home-background.png" !important; */
 	background-repeat: no-repeat;
 	background-size: cover;
 	/* background-color: rgba(255, 255, 255, 0.9) !important; */
 	background-color: gray !important;
+	
 }
  .text-line {
 	text-align: justify;
 	/* text-justify: inter-word; */
 	text-align: center;
-	font-weight: 600;
+	/* font-weight: 600; */
 }
 
 #content {
+	font-size: 20px;
+	font-weight: 100;
+	font-family:'Lobster', cursive;
 	text-align: center;
 	padding-top: 10%;
 	color: white;
