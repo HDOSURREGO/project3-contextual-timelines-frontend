@@ -4,7 +4,6 @@
 	box-sizing: border-box;
 }
 
-
 .timeline {
 	display: flex;
 	margin: 0 auto;
@@ -14,7 +13,7 @@
 	position: relative;
 }
 
-.timeline__content-title{
+.timeline__content-title {
 	font-weight: normal;
 	font-size: 66px;
 	margin: -10px 0 0 0;
@@ -36,8 +35,7 @@
 	line-height: 25px;
 	/* text-align:justify; */
 	/* text-align:center; */
-	width:50%;
-
+	width: 50%;
 }
 
 /* .timeline:before {
@@ -134,7 +132,7 @@
 	background-attachment: fixed;
 	background-size: cover;
 }
-.timeline-container{
+.timeline-container {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -142,7 +140,7 @@
 	height: 90%;
 	background: rgba(99, 99, 99, 0.8);
 	/* content: ""; */
-	margin-top:130px;
+	margin-top: 130px;
 }
 .timeline-header {
 	width: 100%;
@@ -159,11 +157,10 @@
 	font-size: 46px;
 	font-weight: normal;
 	margin: 0;
-	
 }
 /* event name */
 .timeline-header__subtitle {
-	color:white;
+	color: white;
 	/* color: rgba(255, 255, 255, 0.5); */
 	font-family: "Pathway Gothic One", sans-serif;
 	font-size: 20px;
@@ -172,16 +169,14 @@
 	font-weight: normal;
 }
 
-
 /* button selector */
 .selectOpt {
 	margin: 0 auto;
 	width: 160px;
-			
 }
 
-.timeline-header > .select-button{
-	margin-top:50px
+.timeline-header > .select-button {
+	margin-top: 50px;
 }
 
 .selectOpt select {
