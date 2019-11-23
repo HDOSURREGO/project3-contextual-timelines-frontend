@@ -3,34 +3,7 @@
 * {
 	box-sizing: border-box;
 }
-/* 
-body {
-	background-image: "../public/peakyblinders.jpg";
-} */
-.nav-menu {
-	height: 70px;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: right;
-}
-.nav-menu {
-	width: 70%;
-}
-​ .nav-menu ul {
-	display: flex;
-	justify-content: flex-end;
-}
-.nav-menu ul li {
-	padding: 10px 20px;
-	font-size: 20px;
-	list-style-type: none;
-	cursor: pointer;
-}
-/* .nav-menu ul li:hover {
-	color: #fff;
-	font-weight: bold;
-} */
-/* -------------------------------- */
+
 
 .timeline {
 	display: flex;
@@ -40,7 +13,8 @@ body {
 	max-width: 700px;
 	position: relative;
 }
-.timeline__content-title {
+
+.timeline__content-title{
 	font-weight: normal;
 	font-size: 66px;
 	margin: -10px 0 0 0;
@@ -50,16 +24,23 @@ body {
 	font-family: "Pathway Gothic One", sans-serif;
 	color: #fff;
 }
+
+/* text */
 .timeline__content-desc {
-	margin: 0;
+	margin: 0 auto;
 	font-size: 15px;
 	/* box-sizing: border-box; */
 	color: rgba(255, 255, 255, 0.7);
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	font-weight: normal;
 	line-height: 25px;
+	/* text-align:justify; */
+	/* text-align:center; */
+	width:50%;
+
 }
-.timeline:before {
+
+/* .timeline:before {
 	position: absolute;
 	left: 50%;
 	width: 2px;
@@ -67,7 +48,7 @@ body {
 	margin-left: -1px;
 	content: "";
 	background: rgba(255, 255, 255, 0.07);
-}
+} */
 @media only screen and (max-width: 767px) {
 	.timeline:before {
 		left: 40px;
@@ -84,7 +65,7 @@ body {
 	position: relative;
 	transform: translateY(-80px);
 }
-.timeline-item:before {
+/* .timeline-item:before {
 	content: attr(data-text);
 	letter-spacing: 3px;
 	width: 100%;
@@ -98,8 +79,8 @@ body {
 	padding-left: 15px;
 	opacity: 1;
 	right: calc(-100% - 56px);
-}
-.timeline-item:nth-child(even) {
+} */
+/* .timeline-item:nth-child(even) {
 	align-self: flex-end;
 }
 .timeline-item:nth-child(even):before {
@@ -110,17 +91,17 @@ body {
 	border-left: none;
 	border-right: 2px solid rgba(255, 255, 255, 0.5);
 	padding-right: 15px;
-}
-.timeline-item--active {
+} */
+/* .timeline-item--active {
 	opacity: 1;
 	transform: translateY(0);
-	/* filter: blur(0px); */
-}
-.timeline-item--active:before {
+	filter: blur(0px);
+} */
+/* .timeline-item--active:before {
 	top: 50%;
 	transition: 0.3s all 0.2s;
 	opacity: 1;
-}
+} */
 .timeline-item--active .timeline__content-title {
 	margin: -50px 0 20px 0;
 }
@@ -153,14 +134,15 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 }
-.timeline-container:before {
+.timeline-container{
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 100%;
+	height: 90%;
 	background: rgba(99, 99, 99, 0.8);
-	content: "";
+	/* content: ""; */
+	margin-top:130px;
 }
 .timeline-header {
 	width: 100%;
@@ -168,30 +150,40 @@ body {
 	margin-bottom: 80px;
 	position: relative;
 }
-.timeline-header__title h2 {
+/* title */
+.timeline-container > .timeline-event__title h2 {
 	display: flex;
 	flex-direction: column;
 	margin-top: 100px;
 	color: #fff;
 	font-size: 46px;
-	font-family: Cardo;
 	font-weight: normal;
 	margin: 0;
+	
 }
+/* event name */
 .timeline-header__subtitle {
-	color: rgba(255, 255, 255, 0.5);
+	color:white;
+	/* color: rgba(255, 255, 255, 0.5); */
 	font-family: "Pathway Gothic One", sans-serif;
-	font-size: 16px;
+	font-size: 20px;
 	letter-spacing: 5px;
 	margin: 10px 0 0 0;
 	font-weight: normal;
 }
+
+
 /* button selector */
 .selectOpt {
 	margin: 0 auto;
 	width: 160px;
-	margin-top: 50px;
+			
 }
+
+.timeline-header > .select-button{
+	margin-top:50px
+}
+
 .selectOpt select {
 	display: block;
 	font-weight: normal;
@@ -210,17 +202,17 @@ body {
 	border-color: #888;
 }
 
-​ .demo-footer {
+/* ​ .demo-footer {
 	padding: 60px 0;
 	text-align: center;
-}
-.demo-footer a {
+} */
+/* .demo-footer a {
 	color: #999;
 	display: inline-block;
 	font-family: Cardo;
-}
+} */
 
-.select-button {
+/* .select-button {
 	align-items: center;
 	margin-top: 100px;
-}
+} */
