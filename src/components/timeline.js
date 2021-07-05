@@ -66,16 +66,15 @@ export default class Timeline extends React.Component {
 					<select className="select-button" onChange={this.showTimelineInfo}>
 						{optionItems}
 					</select>
-
 				</div>
 				<div className="timeline-container" id="timeline-1">
 					{/* change timeline-header_title */}
 					<div className="timeline-event__title">
-					<h2>
-						{this.state.timelineSelected
-							? this.state.timelineSelected.timelineName
-							: ""}
-					</h2>
+						<h2>
+							{this.state.timelineSelected
+								? this.state.timelineSelected.timelineName
+								: ""}
+						</h2>
 					</div>
 					{this.state.timelineSelected
 						? this.state.timelineSelected.events.map(eachEvent => (

@@ -12,15 +12,16 @@ export default class Home extends React.Component {
 					<h1>Contextual Timelines</h1>
 					<div className="text-line">
 						<p>
-							Occaecat do laboris labore veniam occaecat velit aliqua labore non
-							aliquip ea.Lorem sit aliqua dolor ea nulla eiusmod nulla
-							consectetur ex. Qui non amet nulla eu velit ipsum esse labore
-							pariatur magna dolore amet dolore. Laborum occaecat commodo
-							consequat exercitation do nulla consequat pariatur qui nisi
-							pariatur adipisicing. Qui irure occaecat quis sint tempor.
-							Excepteur eu nulla consequat non officia aliqua minim deserunt
-							quis quis elit ut Lorem. Officia amet enim officia excepteur
-							adipisicing deserunt amet.
+							Historical context is an important part of life and literature,
+							without it memories, stories, and characters have less meaning.
+							When writers are working on their stories, they need to
+							contextualize their characters according to time they lived in,
+							watching the way they talk, the way they dress, and all the
+							relevant events that were happening socially and politically
+							during that time. With the help of this app, writers of any kind
+							of stories can organize the information they have about the time
+							the characters are living in and make stories that are more
+							attached to reality. Welcome and Enjoy!
 						</p>
 					</div>
 					<Button variant="secondary">Let's get started</Button>
